@@ -1,12 +1,18 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import Break from "./components/Break";
+import Session from "./components/Session";
+import TimeLeft from "./components/TimeLeft";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Break />
+      <Session />
+      <TimeLeft />
+      <p id="break-label">Break</p>
+    </div>
+  );
 }
 
 export default App;
