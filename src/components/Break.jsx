@@ -16,21 +16,18 @@ export default function Break() {
     setBreakLengthInSeconds(breakLengthInSeconds + 1);
   };
 
-  const breakLengthInMinutes = moment
-    .duration(breakLengthInSeconds, "s")
-    .minutes();
-
   return (
-    <div>
+    <>
       <p>BreakLabel</p>
-
-      <button id="break-decrement" onClick={decrementBreakLengthInSeconds}>
-        -
-      </button>
-      <button id="break-increment" onClick={incrementBreakLengthInSeconds}>
-        +
-      </button>
-      <p id="break-length">{breakLengthInSeconds}</p>
-    </div>
+      <div class="time-sets">
+        <button id="break-decrement" onClick={decrementBreakLengthInSeconds}>
+          -
+        </button>
+        <p id="break-length">{breakLengthInSeconds}</p>
+        <button id="break-increment" onClick={incrementBreakLengthInSeconds}>
+          +
+        </button>
+      </div>
+    </>
   );
 }
