@@ -1,33 +1,20 @@
-import moment from "moment";
-import React, { useState } from "react";
-export default function Break() {
-  const [breakLengthInSeconds, setBreakLengthInSeconds] = useState(5);
+import React from "react";
 
-  const decrementBreakLengthInSeconds = () => {
-    const newBreakLengthInSeconds = breakLengthInSeconds - 1;
-    if (breakLengthInSeconds < 0) {
-      setBreakLengthInSeconds(8);
-    } else {
-      setBreakLengthInSeconds(newBreakLengthInSeconds);
-    }
-  };
-
-  const incrementBreakLengthInSeconds = () => {
-    setBreakLengthInSeconds(breakLengthInSeconds + 1);
-  };
-
+const Break = ({ breakLength, decrementBreakLength, incrementBreakLength }) => {
   return (
     <>
       <p>BreakLabel</p>
-      <div class="time-sets">
-        <button id="break-decrement" onClick={decrementBreakLengthInSeconds}>
+      <div className="time-sets">
+        <button id="break-decrement" onClick={decrementBreakLength}>
           -
         </button>
-        <p id="break-length">{breakLengthInSeconds}</p>
-        <button id="break-increment" onClick={incrementBreakLengthInSeconds}>
+        <p id="break-length">{breakLength}</p>
+        <button id="break-increment" onClick={incrementBreakLength}>
           +
         </button>
       </div>
     </>
   );
-}
+};
+
+export default Break;
