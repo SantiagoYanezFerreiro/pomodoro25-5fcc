@@ -7,6 +7,13 @@ import "./App.css";
 function App() {
   const [breakLength, setBreakLength] = useState(5);
   const [sessionLength, setSessionLength] = useState(25 * 60);
+  const formatTime = (time) => {
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    return minutes < 10
+      ? "0" + minutes
+      : minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
+  };
   const decrementBreakLength = () => {
     const newBreakLength = breakLength - 1;
     if (breakLength < 0) {
@@ -40,17 +47,27 @@ function App() {
 
   return (
     <div className="App">
-      <Break
-        breakLength={breakLength}
-        decrementBreakLength={decrementBreakLength}
-        incrementBreakLength={incrementBreakLength}
-      />
-      <Session
+      <div className="dual-container">
+        <Break
+          breakLength={breakLength}
+          decrementBreakLength={decrementBreakLength}
+          incrementBreakLength={incrementBreakLength}
+          Child
+          formatTime={formatTime}
+        />
+        <Session
+          sessionLength={sessionLength}
+          decrementSessionLength={decrementSessionLength}
+          incrementSessionLength={incrementSessionLength}
+        />
+      </div>
+      <TimeLeft
         sessionLength={sessionLength}
-        decrementSessionLength={decrementSessionLength}
-        incrementSessionLength={incrementSessionLength}
+        Child
+        formatTime={formatTime}
+        setSessionLength={setSessionLength}
+        setBreakLength={setBreakLength}
       />
-      <TimeLeft />
       <p id="break-label">Break</p>
     </div>
   );

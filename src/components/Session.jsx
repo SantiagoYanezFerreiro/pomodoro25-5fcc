@@ -13,7 +13,7 @@ const Session = ({
   };
 
   return (
-    <div id="session-label">
+    <div id="session-label time-sets">
       <p>Session Length</p>
       <button id="session-increment" onClick={incrementSessionLength}>
         +

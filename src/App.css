@@ -1,3 +1,10 @@
+.dual-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  width: 1200px;
+}
 .time-sets {
   display: grid;
   grid-template-columns: 50px 200px 50px;
