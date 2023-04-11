@@ -17,7 +17,7 @@ function App() {
   const decrementBreakLength = () => {
     const newBreakLength = breakLength - 1;
     if (breakLength < 0) {
-      setBreakLength(8);
+      setBreakLength(0);
     } else {
       setBreakLength(newBreakLength);
     }

@@ -19,10 +19,14 @@ const TimeLeft = ({ sessionLength, setSessionLength, setBreakLength }) => {
       <p>Time Left Test</p>
       <p id="timer-label">"Session"</p>
       <p id="time-left">{formatTime(timeLeft)}</p>
-      <button className="btn-large-functionalities" onClick={controlTime}>
+      <button
+        className="btn-large-functionalities"
+        id="start_stop"
+        onClick={controlTime}
+      >
         {timerOn ? <i className="">pause</i> : <i className="">play</i>}
       </button>
-      <button className="btn-reset" onClick={resetTime}>
+      <button className="btn-reset" id="reset" onClick={resetTime}>
         <i className="">reset</i>
       </button>
     </div>

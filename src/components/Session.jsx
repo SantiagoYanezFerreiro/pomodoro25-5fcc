@@ -13,15 +13,17 @@ const Session = ({
   };
 
   return (
-    <div id="session-label time-sets">
-      <p>Session Length</p>
+    <div id="time-sets">
+      <p id="session-label">Session Length</p>
       <button id="session-increment" onClick={incrementSessionLength}>
         +
       </button>
       <button id="session-decrement" onClick={decrementSessionLength}>
         -
       </button>
-      <p id="session-length">{formatTime(sessionLength)}</p>
+      <p id="session-length">
+        {formatTime(sessionLength) === "25:00" ? 25 : formatTime(sessionLength)}
+      </p>
     </div>
   );
 };
